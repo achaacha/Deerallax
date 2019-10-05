@@ -1,0 +1,148 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #030915;
+	font-family: 'Playfair Display', serif;
+	color: #fff;
+}
+
+/*Logo*/
+.logo-container {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	
+}
+
+.openingText {
+  font-size: 2.5em;
+  color: #fff;
+  font-family: 'Cinzel', sans-serif;
+  text-shadow: 3px 3px 10px #3becc3, -3px -3px 10px #3becc3;
+}
+
+.letter {
+	opacity: 0;
+}
+
+/* Navigation Settings */
+nav {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background: #030915;
+	border: solid;
+	border-color: #e53a64 #e53a64 transparent #e53a64;
+	border-width: 1px;
+	border-radius: 15px 15px 0 0;
+	opacity: 0;
+}
+.fixed-nav nav {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	border-color: transparent #e53a64 #e53a64 #e53a64;
+	border-radius: 0px 0px 15px 15px;
+}
+
+nav ul {
+	text-align: center;
+}
+nav li {
+	display: inline-block;
+	padding: 24px 10px;
+}
+nav li a {
+	color: #fff;
+	text-transform: uppercase;
+}
+
+
+/*Parallax Opener*/
+#parallaxContain {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	background-position: bottom center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: -1;
+}
+.background {
+	background-image: url("https://i.imgur.com/lSjMdmP.png");
+	z-index: -5;
+	opacity: 0.3;
+}
+.deer1 {
+	background-image: url("https://i.imgur.com/h5ytoCW.png");
+	z-index: -3;
+}
+.deer2 {
+	background-image: url("https://i.imgur.com/iA5wjCD.png");
+	z-index: -2;
+}
+.deer3 {
+	background-image: url("https://i.imgur.com/XsIxv6t.png");
+	z-index: -4;
+}
+.deer4 {
+	background-image: url("https://i.imgur.com/KG9eJMD.png");
+}
+
+
+
+/*Content below opening Parallax*/
+#content {
+	background-color: #030915;
+	display: none;
+}
+.section {
+	padding: 50px 0 20px 0;
+}
+.text-header {
+	font-size: 50px;
+	text-align: center;
+}
+h1 {
+	line-height: 120%;
+	margin-bottom: 30px;
+}
+p {
+	color: #ede0d5;
+	font-size: 18px;
+	line-height: 150%;
+}
+.layer2 {
+	width: 100%;
+	height: 800px;
+	background-position: bottom center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+#bg2 {
+	background-image: url('https://i.imgur.com/dm7CPmd.jpg');
+	border-radius: 20px;
+	height: 450px;
+	width: 350px;
+	background-size: 900px, 700px;
+	background-position: center;
+	margin-top: 200px;
+	margin-left: 150px;
+	opacity: 0;
+}
+#deer2 {
+	background-image: url('https://i.imgur.com/xwcQYMa.png');
+	margin-left: -30px;
+	opacity: 0;
+}
+#shadow2 {
+	margin-left: -31px;
+	background-image: url('https://achaacha.github.io/experiments/svg/deerlayer2-3.svg');
+}
