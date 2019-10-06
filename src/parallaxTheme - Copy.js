@@ -1,11 +1,13 @@
 //Logo-related variables
+const textWrapper = document.querySelector('.openingText');
 const screen = window.document
-const content = document.querySelector('#content').style
-const completed = document.querySelector('.openingText');
+const showContent = document.querySelector('#content').style
 
-let AniTrigger = false;
+let headAniTrigger = false;
+let click1 = false;
 
-//Logo + Loading Progress
+//Logo 
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 const logoLines = anime.timeline({
 	targets: '.eyes',
 	opacity: [0,1],
@@ -14,92 +16,90 @@ const logoLines = anime.timeline({
 }).add({
 	targets: '.headpoint',
 	opacity: [0,1],
+	easing: 'easeInOutQuad',
 	duration: 2000,
 	offset: 1000
 }).add({
-	targets: '.headertriangle2 path',
+	  targets: '.figure',
+	  strokeDashoffset: [anime.setDashoffset, 0],
+	  opacity: [.5,1],
+	  easing: 'linear',
+	  duration: 5000,
+	  offset: 2000
+}).add({
+	targets: '.tS1, .glow1',
+	strokeDashoffset: [anime.setDashoffset, 0],
+	duration: 3500,
+	easing: 'easeOutCirc',
+	offset: 2100
+}).add({
+	targets: '.tS2, .tL1, .glow2',
+	strokeDashoffset: [anime.setDashoffset, 0],
+	duration: 3200,
+	easing: 'easeOutCirc',
+	offset: 2300
+}).add({
+	targets: '.tS3, .tL2, .glow3',
+	strokeDashoffset: [anime.setDashoffset, 0],
+	duration: 3000,
+	easing: 'easeOutCirc',
+	offset: 2600
+}).add({
+	targets: '.tL3',
+	strokeDashoffset: [anime.setDashoffset, 0],
+	duration: 3000,
+	easing: 'easeOutCirc',
+	offset: 3000
+}).add({
+	targets: '.openingText .letter',
 	opacity: [0,1],
-	strokeDashoffset: [anime.setDashoffset, 0],
-	duration: 1000,
+	easing: 'easeInOutQuad',
+	duration: 1800,
+	delay: (el, i) => 150 * (i+1),
 	offset: 2000
-}).add({
-	targets: '.headertriangle path',
-	strokeDashoffset: [anime.setDashoffset, 0],
-	duration: 2000,
-	offset: 2000
-}).add({
-	targets: '.figure',
-	strokeDashoffset: [anime.setDashoffset, 0],
-	easing: 'linear',
-	duration: 5000
 });
-const glow = anime({
-	targets: '.headericonSVG',
-	opacity: [1,.5],
+anime({
+	targets: 'svg .glow path',
+	opacity: [1,.4],
 	loop: true,
 	easing: 'linear',
 	direction: 'alternate',
 	duration: 2000
-	});
-completed.innerHTML = completed.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-const loadText = anime.timeline({
-	targets: '.openingText .letter',
-	opacity: [0,1],
-	easing: 'easeInOutQuad',
-	duration: 2000,
-	delay: (el, i) => 200 * (i+1),
-	loop: true
-}).add({
-	targets: '.openingText',
-	opacity: 0,
-	easing: 'easeOutQuad',
-	duration: 2000,
-	delay: 2000
 });
-
 
 //Close logo, Parallax Animation and show content.
 const logoEntry = anime.timeline({
 	autoplay: false,
 	easing: 'linear'
 }).add({
-	targets: '.loader',
+	targets: '.openingText, .openingTextG',
+	opacity: [1,0],
+	duration: 500
+}).add({
+	targets: '.logo-container',
 	scaleX: [1, 0],
-	duration: 50,
+	duration: 125,
 	offset: '+=200'
 }).add({
 	targets: '.background',
-	opacity: 1,
-	duration: 3500,
+	opacity: [.3,1],
+	duration: 2700,
 	begin: function() {
-		headAni.play(AniTrigger);
+		headAni.play(headAniTrigger);
 	}
 });
-const showContent = () => {
-	content.display = 'block';
-}
+screen.onclick = logoEntry.play;
+
 const exitLoadScreen = () => {
 	
-	screen.onclick = logoEntry.play;
-	completed.innerHTML = "Loading Complete. <br> Click to Enter.";
-	const glow = anime({
-	targets: '.openingText',
-	opacity: [.7,1],
-	loop: true,
-	easing: 'linear',
-	direction: 'alternate',
-	duration: 2000
-	});
-	const loadText = anime({
-		targets: '.openingText',
-		opacity: [0,1],
-		easing: 'easeInOutQuad',
-		duration: 1800
-	});	
-
+	if (!click1) {
+		click1 = true;
+		logoLines.seek(logoLines.duration * 100);
+		showContent.display = 'block';
+	}
 }
-window.addEventListener('load', exitLoadScreen);
-window.addEventListener('click', showContent);
+window.addEventListener('click', exitLoadScreen);
+
 
 const headAni = anime.timeline({
 	targets: '#nav',
