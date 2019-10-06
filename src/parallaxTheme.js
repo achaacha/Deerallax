@@ -10,8 +10,7 @@ const logoLines = anime.timeline({
 	targets: '.eyes',
 	opacity: [0,1],
 	easing: 'easeInOutQuad',
-	duration: 3000,
-	autoplay: false
+	duration: 3000
 }).add({
 	targets: '.headpoint',
 	opacity: [0,1],
