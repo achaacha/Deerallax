@@ -125,8 +125,6 @@ const headAniCancel = () => {
 }
 window.addEventListener('scroll', headAniCancel);
 
-
-
 //Sticky nav variables
 const nav = document.querySelector('#nav');
 const navTop = nav.offsetTop;
@@ -140,8 +138,6 @@ const stickyNavigation = () => {
   }
 }
 window.addEventListener('scroll', stickyNavigation);
-
-
 
 //Top Parallax Scroll Variables
 const layers = document.querySelectorAll("[data-type='parallax']");
@@ -163,11 +159,6 @@ const stickyParallax = () => {
 }
 window.addEventListener('scroll', stickyParallax);
 
-
-
-
-
-
 //Content Variables
 let aniL2Once = false;
 
@@ -180,10 +171,31 @@ anime({
   duration: 2000,
   easing: 'easeInOutSine' 
 });
-
+const bloom = anime.timeline({
+	targets: '.blooming',
+	easing: 'linear',
+	autoplay: false
+}).add({
+	targets: '.blooming',
+	width: ['0px', '501px'],
+	duration: 3000
+}).add({
+	targets: '.aa',
+	opacity: [0, 1],
+	duration: 1500,
+	delay: (el, i) => 100 * (i+1),
+	offset: 100
+}).add({
+	targets: '.ab',
+	opacity: [0, 1],
+	duration: 1000,
+	delay: (el, i) => 100 * (i+1),
+	offset: 100
+});
 const contentAni1 = () => {
 	if (window.pageYOffset >= 900 && !aniL2Once) {
 		aniL2Once = true;
+		bloom.play(aniL2Once);
 		anime({
 			targets: '#bg2, #deer2',
 			opacity: [0, 1],

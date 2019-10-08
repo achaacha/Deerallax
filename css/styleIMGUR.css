@@ -45,7 +45,7 @@ nav {
 .fixed-nav nav {
 	position: fixed;
 	top: 0;
-	z-index: 13;
+	z-index: 1;
 	border-color: transparent #e53a64 #e53a64 #e53a64;
 	border-radius: 0px 0px 15px 15px;
 }
@@ -79,24 +79,24 @@ nav li a {
 	z-index: -1;
 }
 .background {
-	background-image: url("../IMG/stars.png");
+	background-image: url("https://i.imgur.com/lSjMdmP.png");
 	z-index: -5;
 	opacity: 0;
 }
 .deer1 {
-	background-image: url("../IMG/backMountains.png");
+	background-image: url("https://i.imgur.com/h5ytoCW.png");
 	z-index: -3;
 }
 .deer2 {
-	background-image: url("../IMG/FrontMountains.png");
+	background-image: url("https://i.imgur.com/iA5wjCD.png");
 	z-index: -2;
 }
 .deer3 {
-	background-image: url("../IMG/Sun.png");
+	background-image: url("https://i.imgur.com/XsIxv6t.png");
 	z-index: -4;
 }
 .deer4 {
-	background-image: url("../IMG/Deer1.png");
+	background-image: url("https://i.imgur.com/KG9eJMD.png");
 }
 
 
@@ -105,8 +105,8 @@ nav li a {
 #content {
 	background-color: #030915;
 	display: none;
+	overflow-x: hidden;
 }
-
 .containBG {
 	height: 1070px;
 	width: 50%;
@@ -132,83 +132,67 @@ nav li a {
 	opacity: 0;
 }
 
-/* background-size: 501px 428px;
-width: 510px;
-	height: 428px; */
+
 .blooming {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: top right;
-	width: 0%;
-	height: 0%;
 	position: absolute;
+	width: 700px;
+	height: 50%;
+	right: 0;
 	z-index: 1;
 }
 
 .aa, .aaS {
+	transform:scaleY(-1);
 	height: 400px;
-	transform: scaleY(-1);
-	right: 0;
+	width: 100%;
 }
 
 .ab, .abS {
 	bottom: 0px;
+	width: 100%;
 	height: 400px;
 	transform: scaleX(-1);
+	margin-bottom: 0px;
 }
-
-.aa, .ab {
-	opacity: 0;
-}
-
 
 .a1 {
 	background-image:url("https://i.imgur.com/7Hm3cMR.png");
-	z-index: 1;
 }
 .a2 {
 	background-image:url("https://i.imgur.com/BEKXcFU.png");
-	z-index: 2;
 }
 .a3 {
 	background-image:url("https://i.imgur.com/CcFceym.png");
-	z-index: 3;
 }
 .a4 {
 	background-image:url("https://i.imgur.com/MNCGFKg.png");
-	z-index: 4;
 }
 .a5 {
 	background-image:url("https://i.imgur.com/wAM5Vul.png");
-	z-index: 5;
 }
 .a6 {
 	background-image:url("https://i.imgur.com/FRUsqQu.png");
-	z-index: 6;
 }
 .a7 {
 	background-image:url("https://i.imgur.com/k45mDd5.png");
-	z-index: 7;
 }
 .a8 {
 	background-image:url("https://i.imgur.com/Ly6EoCx.png");
-	z-index: 8;
 }
 .a9 {
 	background-image:url("https://i.imgur.com/2kxQsQ9.png");
-	z-index: 9;
 }
 .a10 {
 	background-image:url("https://i.imgur.com/E8eVlnN.png");
-	z-index: 10;
 }
 .a11 {
 	background-image:url("https://i.imgur.com/JUXip6m.png");
-	z-index: 11;
 }
 .a12 {
 	background-image:url("https://i.imgur.com/1PYITr7.png");
-	z-index: 12;
 }
 .section {
 	padding: 50px 0 20px 0;
@@ -242,6 +226,8 @@ p {
 #shadow2 {
 	background-image: url('https://achaacha.github.io/experiments/svg/deerlayer2-3.svg');
 }
+
+
 
 /* Scrollbars*/
 ::-webkit-scrollbar {
