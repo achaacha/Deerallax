@@ -15,7 +15,7 @@ body {
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	
+
 }
 
 .openingText {
@@ -117,6 +117,8 @@ nav li a {
 .settwrapper {
 	position: relative;
 	width: 95%;
+	max-width: 675px;
+	left: 0;
 	height: 100%;
 }
 #bg2 {
@@ -128,7 +130,7 @@ nav li a {
 	background-image: url('https://i.imgur.com/dm7CPmd.jpg');
 	background-size: cover;
 	background-position: bottom right;
-	border-radius: 100px 0px 0px 100px;
+	border-radius: 0 100px 100px 0;
 	opacity: 0;
 }
 
@@ -243,13 +245,26 @@ p {
 	background-image: url('https://achaacha.github.io/experiments/svg/deerlayer2-3.svg');
 }
 
+/*Split*/
+#cWrap {
+	width: 100%;
+}
+#d1c {
+	background-image: url('https://w.wallhaven.cc/full/kw/wallhaven-kwl5x1.jpg');
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 450px;
+	background-attachment: fixed;
+}
+
 /* Scrollbars*/
 ::-webkit-scrollbar {
     width: 6px;
-} 
+}
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-} 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
 ::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
